@@ -21,7 +21,9 @@ internal abstract class SkeletonMask(protected val parent: View, @ColorInt color
     private val canvas: Canvas by lazy { createCanvas() }
     protected val paint: Paint by lazy { createPaint() }
 
-    private fun createBitmap(): Bitmap = Bitmap.createBitmap(parent.width, parent.height, Bitmap.Config.ALPHA_8)
+    private fun createBitmap(): Bitmap = Bitmap.createBitmap(if (parent.width != 0) parent.width else 1,
+            if (parent.height != 0) parent.height else 1, Bitmap.Config.ALPHA_8)
+
     private fun createCanvas(): Canvas = Canvas(bitmap)
     protected open fun createPaint(): Paint = Paint().also { it.color = color }
 
