@@ -44,4 +44,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-apply from: 'deploy.gradle'
+//apply from: 'deploy.gradle'
