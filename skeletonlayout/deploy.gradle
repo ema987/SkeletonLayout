@@ -1,6 +1,4 @@
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
-apply from: 'keystore.gradle'
 
 ext {
     groupId = 'com.faltenreich'
@@ -10,21 +8,6 @@ ext {
 
 version = libVersion
 group = groupId
-
-bintray {
-    user = 'faltenreich'
-    key = bintrayKey
-    configurations = ['archives']
-    publish = true
-    override = false
-    pkg {
-        repo = "maven"
-        name = "SkeletonLayout"
-        version {
-            name = libVersion
-        }
-    }
-}
 
 install {
     repositories.mavenInstaller {
